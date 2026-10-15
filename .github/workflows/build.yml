@@ -26,7 +26,7 @@ jobs:
           java-version: '17'
 
       - name: Install Android SDK
-        uses: run: sdkmanager --version
+        run: sdkmanager --version
 
       - name: Install Android SDK 35
         run: sdkmanager --install 'platforms;android-35' 'build-tools;35.0.0'
