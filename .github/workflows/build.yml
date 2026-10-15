@@ -25,11 +25,11 @@ jobs:
           distribution: temurin
           java-version: '17'
 
-      - name: Install Android SDK
-        
+      - name: Add Android SDK tools to PATH
+        run: echo "$ANDROID_HOME/cmdline-tools/latest/bin" >> "$GITHUB_PATH"
 
       - name: Install Android SDK 35
-        run: echo "$ANDROID_HOME/cmdline-tools/latest/bin" >> "$GITHUB_PATH" 'platforms;android-35' 'build-tools;35.0.0'
+        run: sdkmanager --install 'platforms;android-35' 'build-tools;35.0.0'
 
       - name: Install Gradle
         uses: gradle/actions/setup-gradle@v4
